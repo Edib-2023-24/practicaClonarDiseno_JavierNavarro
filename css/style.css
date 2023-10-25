@@ -8,12 +8,77 @@
 
 /* Tipografía */
 @font-face {
-  font-family: "";
-  src: url("") format("woff2"), url("") format("woff");
+  font-family: "mayberry";
+  src: url("../font/Mayberry\ W02\ Black.woff2") format("woff2"), url("../font/Mayberry\ W02\ Black.woff") format("woff");
+}
+
+html {
+  font-family: "mayberry", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
 }
 
 /* ******************************** */
 
 /* Colores */
+:root {
+  /* Mode 1 */
+  /* colors */
+  --color-blanco: #ffffff;
+  --color-violeta-claro: #fbbad9;
+  --color-violeta-normal: #612dd0;
+  --color-violeta-oscuro: #0f2471;
+  --color-violeta-rojo: #ae57c5;
+
+  /*Tipografia*/
+  --tipo-subtitulo: 1.5rem;
+  --tipo-parrafo: 1rem;
+  --tipo-links: 1.125rem;
+
+  /*Tamaños*/
+  --tam-anchoMaximo: 1640px;
+}
 
 /* ******************************** */
+/* HEADER */
+header {
+  background-color: var(--color-violeta-oscuro);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px 145px;
+}
+
+.header_nav {
+  width: 100%;  
+  max-width: var(--tam-anchoMaximo);
+  display: flex;
+  align-items: center;
+  gap: 30px;
+
+  & .header__link-logo {
+    flex-grow: 1;
+
+    & .header__img-logo {
+      width: 75px;
+    }
+  }
+
+  & .header__servicios, .header__soporte, .header__contactar {
+    text-decoration: none;
+    color: var(--color_blanco, #FFF);
+  }
+
+  & .empezar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    padding: 10px 25px;
+    color: var(--color_violeta_oscuro, #0F2471);
+    background: var(--color_blanco, #FFF);
+    border-radius: 25px;    
+  }
+}
+
+/* FOOTER */
