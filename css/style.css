@@ -18,6 +18,12 @@ html {
   font-weight: 400;
 }
 
+a {
+  text-decoration: none;
+  color: var(--color-blanco);
+  font-size: var(--tipo-links);
+}
+
 /* ******************************** */
 
 /* Colores */
@@ -27,13 +33,14 @@ html {
   --color-blanco: #ffffff;
   --color-violeta-claro: #fbbad9;
   --color-violeta-normal: #612dd0;
-  --color-violeta-oscuro: #0f2471;
+  --color-violeta-oscuro: #052867;
   --color-violeta-rojo: #ae57c5;
 
   /*Tipografia*/
   --tipo-subtitulo: 1.5rem;
   --tipo-parrafo: 1rem;
   --tipo-links: 1.125rem;
+  --tipo-lista: 1.25rem;
 
   /*Tamaños*/
   --tam-anchoMaximo: 1640px;
@@ -43,13 +50,13 @@ html {
 /* HEADER */
 header {
   background-color: var(--color-violeta-oscuro);
+  height: 150px;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 30px 145px;
 }
 
-.header_nav {
+.header__nav {
   width: 100%;  
   max-width: var(--tam-anchoMaximo);
   display: flex;
@@ -74,7 +81,7 @@ header {
     justify-content: center;
     align-items: center;
     text-decoration: none;
-    padding: 10px 25px;
+    padding: 10px 35px;
     color: var(--color_violeta_oscuro, #0F2471);
     background: var(--color_blanco, #FFF);
     border-radius: 25px;    
@@ -85,14 +92,18 @@ header {
 footer {
   background: linear-gradient(180deg, #AA60DD 0%, #0F2471 100%);
   padding: 30px 145px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-section {
+.footer__section {
   width: 100%;
   max-width: 1640px;
   display: grid;
   grid-template-columns: 40% auto auto auto;
-  grid-template-rows: 75px auto auto;
+  grid-template-rows: auto 50% auto;
   gap: 40px 50px;
 
   & .footer__img-logo {
@@ -107,25 +118,20 @@ section {
   }
 
   & .servicios {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
+    align-self: end;
     color: var(--color-blanco);    
   }
 
   & .footer__servicios {
     grid-column: 2/3;
     grid-row: 2/3;
-    color: var(--color-blanco);
     display: flex;
     flex-direction: column;
     gap: 15px;
   }
 
   & .support {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
+    align-self: end;
     color: var(--color-blanco);
     
   }
@@ -136,7 +142,6 @@ section {
     gap: 15px;
     grid-column: 3/4;
     grid-row: 2/3;
-    color: var(--color-blanco);
 
     & a {
       display: grid;
@@ -146,6 +151,7 @@ section {
 
   & .footer__redes {
     display: flex;
+    justify-content: flex-end;
     gap:0 20px;
     grid-column: 4/5;
     grid-row: 3/4;
@@ -160,5 +166,37 @@ section {
     grid-row: 3/4;
     color: var(--color-blanco);
     font-size: 12px;
+  }
+}
+
+/* SERVICIOS */
+.main__index {
+  padding: 30px 145px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url("../svg/figuraservicios.svg");
+  background-repeat: no-repeat;
+}
+
+.main_servicios {
+  width: 100%;  
+  max-width: var(--tam-anchoMaximo);
+
+}
+
+.servicios__figures {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 100px;
+
+  & figure {
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+      & img {
+        width: 60px;
+      }
   }
 }
